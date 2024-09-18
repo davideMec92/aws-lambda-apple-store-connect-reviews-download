@@ -36,7 +36,7 @@ In order to use imported libraries you need to add a layer to your lambda. I use
 13. Create new layer and select upload from S3, copy and past the address of the uplaoded .zip file
 14. Select the language version to Python 3.9 and choose the lambda architecture
 15. Create layer
-16. Go to your lambda function, select layers and add the create layer with its version
+16. Go to your lambda function, select layers and add the created layer with its version
 
 # Call lambda
 1. To call your lambda use the syntax: ```<your_lambda_enpoint_address>?secret=<your_env_secret>&fetchAll=<true|false>```
