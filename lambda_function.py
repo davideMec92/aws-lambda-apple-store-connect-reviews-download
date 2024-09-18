@@ -8,9 +8,6 @@ import base64
 import io
 
 def lambda_handler(event, context):
-
-    print("query string parameters: " + json.dumps(event['queryStringParameters']))
-
     if(event['queryStringParameters']['secret'] is None or event['queryStringParameters']['secret'] != os.environ['REQUEST_SECRET_TOKEN']):
         return {
             'statusCode': 401,
@@ -25,7 +22,7 @@ def lambda_handler(event, context):
     key_id = os.environ['APP_STORE_KEY_ID']  # Use your Key ID you get from App Store Connect
     issuer_id = os.environ['KEY_ISSUER_ID']  # Use your Issuer ID you get from App Store Connect
     private_key_path = os.environ['PRIVATE_KEY_PATH']  # The path of your AutKey you have downloaded from App Store Connect
-    app_id = os.environ['MOBILE_APP_ID']
+    app_id = os.environ['MOBILE_APP_ID'] # Your application ID, usually is a numeric value
 
     jwt_token = generate_token(key_id, issuer_id, private_key_path)
     print('get jwt token: ' + jwt_token)
@@ -36,15 +33,8 @@ def lambda_handler(event, context):
     filename = 'appstore_reviews.csv'
 
     if reviews:
-        print('Reviews type: ' + str(type(reviews)))
         csv = save_to_csv(reviews)
-        """ if output_format in ('json', 'both'):
-            save_to_json(reviews)
-        if output_format in ('csv', 'both'):
-            save_to_csv(reviews)"""
-    else:
-        print("No reviews fetched.")
-    
+        
     return {
         "statusCode":200, 
             "headers":{
