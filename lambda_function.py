@@ -58,7 +58,7 @@ def generate_token(key_id, issuer_id, private_key_path):
     payload = {
         "iss": issuer_id,
         "iat": int(time.time()),
-        "exp": int(time.time()) + 20 * 60, # 60 minutes
+        "exp": int(time.time()) + 20 * 60, # 20 minutes
         "aud": "appstoreconnect-v1"
     }
 
