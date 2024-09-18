@@ -39,5 +39,5 @@ In order to use imported libraries you need to add a layer to your lambda. I use
 16. Go to your lambda function, select layers and add the created layer with its version
 
 # Call lambda
-1. To call your lambda use the syntax: ```<your_lambda_enpoint_address>?secret=<your_env_secret>&fetchAll=<true|false>```
+1. To call your lambda use the syntax: ```<your_lambda_enpoint_address>/?secret=<your_env_secret>&fetchAll=<true|false>```
 2. You should this the CSV file download starting from your browser
