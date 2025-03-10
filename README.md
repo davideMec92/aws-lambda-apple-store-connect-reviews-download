@@ -20,7 +20,7 @@ In the script you can see the following environment variables:
 Environment variables must be defined in the lambda environment section.
 
 # Layer
-In order to use imported libraries you need to add a layer to your lambda. I use this article: https://medium.com/@bhatia.sandeep/importing-python-libraries-in-aws-lambda-f6e8b2a31a24, so this is the way I found:
+In order to use imported libraries you need to add a layer to your lambda. I used this article: https://medium.com/@bhatia.sandeep/importing-python-libraries-in-aws-lambda-f6e8b2a31a24, so this is the way I found:
 1. Start an EC2 instance with AWS Linux AMI
 2. Connect to console with ssh
 3. Check that Python 3.9 is the installed version
@@ -40,4 +40,4 @@ In order to use imported libraries you need to add a layer to your lambda. I use
 
 # Call lambda
 1. To call your lambda use the syntax: ```<your_lambda_enpoint_address>/?secret=<your_env_secret>&fetchAll=<true|false>```
-2. You should this the CSV file download starting from your browser
+2. You should see the CSV file download starting from your browser
